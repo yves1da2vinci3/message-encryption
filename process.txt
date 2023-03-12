@@ -1,0 +1,24 @@
+The RSA (Rivest-Shamir-Adleman) process is a widely used public-key encryption algorithm that allows two parties to securely exchange messages over an insecure communication channel. Here is a brief explanation of the RSA process:
+
+Key generation:
+The first step is to generate a public and private key pair. The public key is shared with anyone who wants to send a message, while the private key is kept secret and only known by the recipient of the message. To generate the key pair, the following steps are taken:
+Choose two large prime numbers, p and q.
+Calculate n = p*q, which is called the modulus.
+Calculate φ(n) = (p-1)(q-1), which is the totient of n.
+Choose an integer e, where 1 < e < φ(n) and e is coprime to φ(n).
+Calculate the modular inverse of e mod φ(n), which is d, where (d*e) mod φ(n) = 1.
+The public key is (n, e) and the private key is (n, d).
+
+Encryption:
+To encrypt a message using RSA, the sender performs the following steps:
+Represent the message as a number m.
+Calculate the ciphertext c = m^e mod n, using the public key (n, e).
+Send the ciphertext c to the recipient.
+
+Decryption:
+To decrypt the ciphertext using RSA, the recipient performs the following steps:
+Obtain the ciphertext c.
+Calculate the plaintext m = c^d mod n, using the private key (n, d).
+The plaintext message is then obtained by converting the number m back to its original form.
+
+The security of RSA is based on the difficulty of factoring large composite numbers. The larger the primes used to generate the key pair, the more secure the system is. RSA is widely used in various applications, such as secure web browsing, digital signatures, and secure email communication
